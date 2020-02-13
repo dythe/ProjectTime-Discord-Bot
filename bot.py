@@ -577,8 +577,6 @@ async def retrieveTeamComp(user, message, commandType, idDiscord):
                 descriptionFormat = descriptionFormat + "Comments: \n **%s**" % (publicCommentsCell)
 
             embed = discord.Embed(title="Group %s" % (groupNo), description=descriptionFormat, color=0x7289da)
-            # whatisURL = 'C:/Users/Jefferson/Desktop/DiscordBot/gc3.png'
-            # embed.set_thumbnail(url=whatisURL)
             
             for i, x in enumerate(nameCells):
                 if nameCells[i].value != '' and heroCells[i].value != '':
