@@ -600,22 +600,7 @@ async def retrieveTeamComp(user, message, commandType, idDiscord):
 
 async def retrieveDmg(user, message, currentChannel):
 
-    # print ("%s requested for current GC damage status." % (user))
-    # for i in range(0,50):
-    #     while True:
-    #         try:
-    #             scope = ['https://spreadsheets.google.com/feeds',
-    #                      'https://www.googleapis.com/auth/drive']
-
-    #             credentials = ServiceAccountCredentials.from_json_keyfile_name('PTBot.json', scope)
-
-    #             gc = gspread.authorize(credentials)
-    #         except:
-    #             print('Exception detected. retrying...')
-    #             continue
-    #         break
-    # sht1 = gc.open_by_key(googleAPIKey)
-    # guildConquestSheet = sht1.get_worksheet(0)
+    print ("%s requested for current GC damage status." % (user))
 
     gc1Lowest = guildConquestSheet.cell(5, 13).value
     gc1Highest = guildConquestSheet.cell(6, 13).value
@@ -664,24 +649,6 @@ async def retrieveDmg(user, message, currentChannel):
 # async def retrieveDmg(user, message):
 
 #     print ("Retrieving in Progress")
-#     for i in range(0,50):
-#         while True:
-#             try:
-#                 scope = ['https://spreadsheets.google.com/feeds',
-#                          'https://www.googleapis.com/auth/drive']
-
-#                 credentials = ServiceAccountCredentials.from_json_keyfile_name('PTBot.json', scope)
-
-#                 gc = gspread.authorize(credentials)
-#             except:
-#                 print('Exception detected. retrying...')
-#                 continue
-#             break
-#     sht1 = gc.open_by_key(googleAPIKey)
-#     guildConquestSheet = sht1.get_worksheet(0)
-
-#     runsDamageCells = [11, 14, 17, 28, 31, 34, 37, 40, 43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76]
-#     # runsDamageCells = [28, 31, 34, 37, 40, 43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76]
 
 #     for i, x in enumerate(runsDamageCells):
 
