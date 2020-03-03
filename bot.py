@@ -48,16 +48,16 @@ PTModArray = []
 
 #Tyrfas
 group1Rows = [11, 12, 13]
+group2Rows = [14, 15, 16]
 
 #Lakreil
-group2Rows = [22, 23, 24]
 group3Rows = [25, 26, 27]
+group4Rows = [28, 29, 30]
+group5Rows = [31, 32, 33]
+group6Rows = [34, 35, 36]
+group7Rows = [37, 38, 39]
 
 #Velkazar
-group4Rows = [36, 37, 38]
-group5Rows = [39, 40, 41]
-group6Rows = [42, 43, 44]
-group7Rows = [45, 46, 47]
 group8Rows = [48, 49, 50]
 group9Rows = [51, 52, 53]
 group10Rows = [54, 55, 56]
@@ -76,6 +76,16 @@ group22Rows = [90, 91, 92]
 group23Rows = [93, 94, 95]
 group24Rows = [96, 97, 98]
 group25Rows = [99, 100, 101]
+group26Rows = [102, 103, 104]
+group27Rows = [105, 106, 107]
+group28Rows = [108, 109, 110]
+group29Rows = [111, 112, 113]
+group30Rows = [114, 115, 116]
+
+GCBansColumnsNumber = 4
+GC1BansRowsNumber = 8
+GC2BansRowsNumber = 22
+GC3BansRowsNumber = 45
 
 groupsDict = [
     (1, group1Rows),
@@ -103,13 +113,17 @@ groupsDict = [
     (23, group23Rows),
     (24, group24Rows),
     (25, group25Rows),
-
+    (26, group26Rows),
+    (27, group27Rows),
+    (28, group28Rows),
+    (29, group29Rows),
+    (30, group30Rows),
 ]
 
 # Group Numbers
-tyrfasGroups = [1]
-lakreilGroups = [2, 3]
-velkazarGroups = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+tyrfasGroups = [1, 2]
+lakreilGroups = [3, 4, 5, 6, 7]
+velkazarGroups = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
 
 # Naming
 tyrfasNameTag = 'Guild Conquest 1 (Tyrfas)'
@@ -514,9 +528,9 @@ async def retrieveTeamComp(user, message, commandType, idDiscord):
         print ('lookup_list: ' + str(lookup_list))
 
         # Bans embed
-        GC1Bans = guildConquestSheet.cell(8, 4).value
-        GC2Bans = guildConquestSheet.cell(19, 4).value
-        GC3Bans = guildConquestSheet.cell(33, 4).value
+        GC1Bans = guildConquestSheet.cell(GC1BansRowsNumber, GCBansColumnsNumber).value
+        GC2Bans = guildConquestSheet.cell(GC2BansRowsNumber, GCBansColumnsNumber).value
+        GC3Bans = guildConquestSheet.cell(GC3BansRowsNumber, GCBansColumnsNumber).value
 
         GC1Val = GC1Bans.split("Bans:")[1].strip()
         GC2Val = GC2Bans.split("Bans:")[1].strip()
@@ -544,6 +558,7 @@ async def retrieveTeamComp(user, message, commandType, idDiscord):
             await client.send_message(message.author, embed=bansEmbed)
 
         for x in lookup_list:
+            print("x is %s", x)
             groupNo = None
             groupString = None
             rowsArray = []
@@ -600,22 +615,7 @@ async def retrieveTeamComp(user, message, commandType, idDiscord):
 
 async def retrieveDmg(user, message, currentChannel):
 
-    # print ("%s requested for current GC damage status." % (user))
-    # for i in range(0,50):
-    #     while True:
-    #         try:
-    #             scope = ['https://spreadsheets.google.com/feeds',
-    #                      'https://www.googleapis.com/auth/drive']
-
-    #             credentials = ServiceAccountCredentials.from_json_keyfile_name('PTBot.json', scope)
-
-    #             gc = gspread.authorize(credentials)
-    #         except:
-    #             print('Exception detected. retrying...')
-    #             continue
-    #         break
-    # sht1 = gc.open_by_key(googleAPIKey)
-    # guildConquestSheet = sht1.get_worksheet(0)
+    print ("%s requested for current GC damage status." % (user))
 
     gc1Lowest = guildConquestSheet.cell(5, 13).value
     gc1Highest = guildConquestSheet.cell(6, 13).value
@@ -664,24 +664,6 @@ async def retrieveDmg(user, message, currentChannel):
 # async def retrieveDmg(user, message):
 
 #     print ("Retrieving in Progress")
-#     for i in range(0,50):
-#         while True:
-#             try:
-#                 scope = ['https://spreadsheets.google.com/feeds',
-#                          'https://www.googleapis.com/auth/drive']
-
-#                 credentials = ServiceAccountCredentials.from_json_keyfile_name('PTBot.json', scope)
-
-#                 gc = gspread.authorize(credentials)
-#             except:
-#                 print('Exception detected. retrying...')
-#                 continue
-#             break
-#     sht1 = gc.open_by_key(googleAPIKey)
-#     guildConquestSheet = sht1.get_worksheet(0)
-
-#     runsDamageCells = [11, 14, 17, 28, 31, 34, 37, 40, 43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76]
-#     # runsDamageCells = [28, 31, 34, 37, 40, 43, 46, 49, 52, 55, 58, 61, 64, 67, 70, 73, 76]
 
 #     for i, x in enumerate(runsDamageCells):
 
