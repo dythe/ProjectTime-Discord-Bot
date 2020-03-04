@@ -49,18 +49,18 @@ PTModArray = []
 #Tyrfas
 group1Rows = [11, 12, 13]
 group2Rows = [14, 15, 16]
+group3Rows = [17, 18, 19]
+group4Rows = [20, 21, 22]
+group5Rows = [23, 24, 25]
 
 #Lakreil
-group3Rows = [25, 26, 27]
-group4Rows = [28, 29, 30]
-group5Rows = [31, 32, 33]
 group6Rows = [34, 35, 36]
 group7Rows = [37, 38, 39]
+group8Rows = [40, 41, 42]
+group9Rows = [43, 44, 45]
+group10Rows = [46, 47, 48]
 
 #Velkazar
-group8Rows = [48, 49, 50]
-group9Rows = [51, 52, 53]
-group10Rows = [54, 55, 56]
 group11Rows = [57, 58, 59]
 group12Rows = [60, 61, 62]
 group13Rows = [63, 64, 65]
@@ -81,11 +81,14 @@ group27Rows = [105, 106, 107]
 group28Rows = [108, 109, 110]
 group29Rows = [111, 112, 113]
 group30Rows = [114, 115, 116]
+group31Rows = [117, 118, 119]
+group32Rows = [120, 121, 122]
+group33Rows = [123, 124, 125]
 
 GCBansColumnsNumber = 4
 GC1BansRowsNumber = 8
-GC2BansRowsNumber = 22
-GC3BansRowsNumber = 45
+GC2BansRowsNumber = 31
+GC3BansRowsNumber = 54
 
 groupsDict = [
     (1, group1Rows),
@@ -118,12 +121,15 @@ groupsDict = [
     (28, group28Rows),
     (29, group29Rows),
     (30, group30Rows),
+    (31, group31Rows),
+    (32, group32Rows),
+    (33, group33Rows),
 ]
 
 # Group Numbers
-tyrfasGroups = [1, 2]
-lakreilGroups = [3, 4, 5, 6, 7]
-velkazarGroups = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+tyrfasGroups = [1, 2, 3, 4, 5]
+lakreilGroups = [6, 7, 8, 9, 10]
+velkazarGroups = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
 
 # Naming
 tyrfasNameTag = 'Guild Conquest 1 (Tyrfas)'
